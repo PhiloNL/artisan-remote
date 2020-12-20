@@ -1,0 +1,50 @@
+{
+  "name": "philo/artisan-remote",
+  "description": "An HTTP API to interact with Laravel Artisan commands.",
+  "keywords": [
+    "laravel",
+    "artisan",
+    "api"
+  ],
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Philo Hermans",
+      "email": "me@philohermans.com"
+    }
+  ],
+  "require": {
+    "php": "^7.2.5",
+    "illuminate/support": "^7.17",
+    "sensiolabs/ansi-to-html": "^1.2"
+  },
+  "require-dev": {
+    "orchestra/testbench": "^5.3",
+    "phpunit/phpunit": "^9.2"
+  },
+  "autoload": {
+    "psr-4": {
+      "Philo\\ArtisanRemote\\": "src/"
+    }
+  },
+  "autoload-dev": {
+    "psr-4": {
+      "Philo\\ArtisanRemote\\Tests\\": "tests/"
+    }
+  },
+  "extra": {
+    "laravel": {
+      "providers": [
+        "Philo\\ArtisanRemote\\ArtisanRemoteServiceProvider"
+      ]
+    }
+  },
+  "config": {
+    "sort-packages": true
+  },
+  "scripts": {
+    "test": "./vendor/bin/phpunit"
+  },
+  "minimum-stability": "dev",
+  "prefer-stable": true
+}
