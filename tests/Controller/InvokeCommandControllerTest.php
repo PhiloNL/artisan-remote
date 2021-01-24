@@ -2,6 +2,8 @@
 
 namespace Philo\ArtisanRemote\Tests\Controller;
 
+use Illuminate\Foundation\Console\DownCommand;
+use Illuminate\Support\Facades\Artisan;
 use Philo\ArtisanRemote\Tests\TestCase;
 use Illuminate\Foundation\Console\UpCommand;
 
@@ -9,8 +11,10 @@ class InvokeCommandControllerTest extends TestCase
 {
     public function test_if_command_is_invoked()
     {
+        Artisan::call('up');
+
         $this->overrideArtisanRemoteCommands([
-            UpCommand::class,
+            DownCommand::class,
         ]);
 
         $this->overrideArtisanRemoteAuthentication([
@@ -19,20 +23,22 @@ class InvokeCommandControllerTest extends TestCase
 
         $response = $this->withToken('039ede05-d2c1-4ab4-8869-945e805e6bbc')
             ->postJson('artisan-remote/commands/invoke', [
-                'name' => 'up',
+                'name' => 'down',
             ]);
 
         $response->assertOk();
         $response->assertJson([
-            'exitCode' => 1,
+            'exitCode' => 0,
         ]);
-        $response->assertSee('Application is already up.');
+        $response->assertSee('Application is now in maintenance mode.');
         $response->assertJsonStructure([
             'rawCommandOutput',
             'HtmlCommandOutput',
             'exitCode',
             'executionTime',
         ]);
+
+        Artisan::call('up');
     }
 
     public function test_if_commands_accepts_arguments()

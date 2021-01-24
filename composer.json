@@ -14,11 +14,11 @@
     }
   ],
   "require": {
-    "php": "^7.2.5",
+    "php": "^7.3.0|^8.0",
     "sensiolabs/ansi-to-html": "^1.2"
   },
   "require-dev": {
-    "orchestra/testbench": "^5.3",
+    "orchestra/testbench": "^v5.14.0|^v6.9.0",
     "phpunit/phpunit": "^9.2"
   },
   "autoload": {

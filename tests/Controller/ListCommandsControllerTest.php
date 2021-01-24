@@ -22,7 +22,6 @@ class ListCommandsControllerTest extends TestCase
 
         $this->overrideArtisanRemoteAuthentication([
             '039ede05-d2c1-4ab4-8869-945e805e6bbc' => [
-                DownCommand::class,
                 UpCommand::class,
                 ModelMakeCommand::class,
             ],
@@ -30,39 +29,8 @@ class ListCommandsControllerTest extends TestCase
 
         $response = $this->withToken('039ede05-d2c1-4ab4-8869-945e805e6bbc')->get('artisan-remote/commands');
         $response->assertOk();
-        $response->assertJsonCount(3);
+        $response->assertJsonCount(2);
         $response->assertJson([
-            [
-                'name'        => 'down',
-                'description' => 'Put the application into maintenance mode',
-                'arguments'   => [],
-                'options'     => [
-                    [
-                        'name'        => 'message',
-                        'description' => 'The message for the maintenance mode',
-                        'default'     => null,
-                        'isArray'     => false,
-                        'isRequired'  => false,
-                        'isOptional'  => true,
-                    ],
-                    [
-                        'name'        => 'retry',
-                        'description' => 'The number of seconds after which the request may be retried',
-                        'default'     => null,
-                        'isArray'     => false,
-                        'isRequired'  => false,
-                        'isOptional'  => true,
-                    ],
-                    [
-                        'name'        => 'allow',
-                        'description' => 'IP or networks allowed to access the application while in maintenance mode',
-                        'default'     => [],
-                        'isArray'     => true,
-                        'isRequired'  => false,
-                        'isOptional'  => true,
-                    ],
-                ],
-            ],
             [
                 'name'        => 'up',
                 'description' => 'Bring the application out of maintenance mode',
