@@ -11,7 +11,7 @@
 Artisan Remote is a package for Laravel to interact with your Artisan Commands via an HTTP API.
 
 ## Artisan Remote Desktop 
-<p align="center"><a href="https://unlock.sh/download/a428d391-79a8-4300-b7f7-ace69518525b" target="_blank"><img src="https://user-images.githubusercontent.com/1133950/101404659-38fa8b80-38d7-11eb-9fef-89784960b433.png"></a></p>
+<p align="center"><a href="https://unlock.sh/download/artisan-remote" target="_blank"><img src="https://user-images.githubusercontent.com/1133950/101404659-38fa8b80-38d7-11eb-9fef-89784960b433.png"></a></p>
 
 If you want an easy way to interact with your Artisan commands via the UI, be sure to download the desktop app, which integrates with the Artisan Remote API.
 
@@ -22,7 +22,7 @@ If you want an easy way to interact with your Artisan commands via the UI, be su
 - Your application environment details in one single overview. 
 - Works on Mac, Windows and Linux.
 
-[Download for Mac, Windows or Linux](https://unlock.sh/download/a428d391-79a8-4300-b7f7-ace69518525b) distribution via [Unlock](https://unlock.sh).
+[Download for Mac, Windows or Linux](https://unlock.sh/download/artisan-remote) distribution via [Unlock](https://unlock.sh).
 
 ## Installation
 To get started, require the package via Composer:
